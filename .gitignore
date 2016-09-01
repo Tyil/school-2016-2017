@@ -1,0 +1,11 @@
+# PDFs should be generated using Latex
+*.pdf
+
+# latex compilation garbage
+*.aux
+*.log
+*.toc
+
+# vim swapfiles
+.*.sw?
+

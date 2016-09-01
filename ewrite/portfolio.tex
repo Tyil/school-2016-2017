@@ -1,0 +1,58 @@
+\documentclass[11pt,english]{article}
+
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+
+\graphicspath{{assets/}}
+
+\lfoot{Patrick Spek}
+\cfoot{\today}
+\rfoot{\thepage/\pageref{LastPage}}
+
+\newcommand*{\Frontpage}{\begingroup
+	\hbox{%
+		\hspace*{0.2\textwidth}
+		\rule{1pt}{\textheight}
+		\hspace*{0.05\textwidth}
+		\parbox[b]{0.75\textwidth}{%
+			{\noindent\Huge\bfseries Portfolio}\\[2\baselineskip] % Title
+			{\large \textit{English writing}}\\[4\baselineskip] % Tagline or further description
+			{\Large \textsc{\\
+				Patrick Spek \\
+			}}
+
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+	}
+\endgroup}
+
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+	% frontpage
+	\thispagestyle{empty}
+	\Frontpage{}
+	\newpage
+
+	% table of contents
+	\tableofcontents
+	\newpage
+
+	% main body
+	\section{Learning Goals}
+	\par
+	One of my learning goals for this class is to make less errors with regards
+	to the word ordering. In formal English texts (and not-so-formal texts as
+	well, for that matter), the order in which words appear is important. I
+	often make mistakes in this area, for instance by putting the time
+	somewhere in the middle of the sentence instead of at the end.
+
+	% TODO: add another learning goal
+	%       something about s.m.a.r.t. learning goals or something
+\end{document}
+

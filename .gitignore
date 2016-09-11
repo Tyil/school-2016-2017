@@ -9,3 +9,6 @@
 # vim swapfiles
 .*.sw?
 
+# random stuff that shouldn't be added to the repo
+*/auto/*.el
+

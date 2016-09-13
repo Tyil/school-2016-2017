@@ -5,6 +5,7 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{lastpage}
+\usepackage{standalone}
 
 \pagestyle{fancy}
 
@@ -57,49 +58,6 @@
 
   \newpage
   \section{The Email}
-  Subject: Laptop issues
-  \\
-  \par
-  Dear Sir or Madam,
-  \\
-  \par
-  I am writing to inform you about issues we have with the laptops we recently
-  ordered from your company, Lenovo.
-
-  \par
-  I am afraid that the batch of 600 IdeaPads we recently ordered and received
-  are having technical issues which are impairing our current workflow. The
-  laptops seem to have issues connecting to our WiFi network, even after we
-  applied all firmware updates.
-
-  \par
-  Another issue we have ran into is battery failure. Even though ACPI reports
-  the batteries to have well over one hour of battery life left, the machine
-  shuts off and will only turn on when the laptop is connected to a power source
-  or a fully charged battery is inserted.
-
-  \par
-  I have also received a number of complaints from my employees about the
-  keyboard in the laptop. Sometimes, certain keystrokes are not being processed
-  by the keyboard. We have tested this on the laptops using the xev tool, and we
-  cannot figure out the reason to why it sometimes fails. Certain media keys,
-  such as volume controls, do not work either.
-
-  \par
-  I request you to look into these issues and release an update which resolves
-  them by the end of this week. If this is not possible, I wish to know your
-  course of action in resolving this issue and a date at which you expect it will
-  be resolved. Failure to do so will require me to send back the entire batch of
-  laptops and demand a refund.
-  \\
-  \\
-  \\
-  Yours faithfully,
-  \\
-  \\
-  Patrick Spek
-  \\
-  Chief Technical Officer, \\
-  Scriptkitties
+  \input{email}
 \end{document}
 

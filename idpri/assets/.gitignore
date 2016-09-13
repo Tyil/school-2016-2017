@@ -1,0 +1,12 @@
+*
+!.gitignore
+
+# these assets are static and should be kept in the repo
+app-slecht.jpg
+game-goed.jpg
+game-slecht.png
+voorwerp-goed.png
+voorwerp-slecht.jpg
+website-goed.png
+website-slecht.png
+

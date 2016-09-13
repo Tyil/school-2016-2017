@@ -1,0 +1,33 @@
+digraph G {
+	overlap = false;
+	node [shape=circle,style=solid]
+
+	"Home" [style=filled,color=blue]
+	"Project index" [style=filled,color=orange]
+	"Bug index" [style=filled,color=green]
+
+	subgraph Home {
+		edge [dir=both]
+
+		Home -> "Bug index"
+		Home -> "Login"
+		Home -> "Project index"
+	}
+
+	subgraph Bug {
+		edge [arrowhead=normal,arrowtail=normal,dir=both]
+		node [color=green,style=filled]
+
+		"Bug index" -> "New bug"
+		"Bug index" -> "Bug view"
+		"Bug index" -> "Bug history"
+	}
+
+	subgraph Project {
+		edge [arrowhead=normal,arrowtail=normal,dir=both]
+		node [color=orange,style=filled]
+
+		"Project index" -> "Project reports"
+		"Project index" -> "Project versions"
+	}
+}

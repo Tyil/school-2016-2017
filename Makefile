@@ -1,7 +1,7 @@
 DESTDIR?=$(CURDIR)/pdf_output
 PDFLATEX_ARGS=-output-directory "$(DESTDIR)"
 
-all: refresh ewrite idpri clean
+all: refresh ewrite idpri soprj5 clean
 
 clean:
 	rm -f $(DESTDIR)/*.aux
@@ -16,6 +16,7 @@ refresh:
 
 ewrite: ewrite-email ewrite-portfolio
 idpri: idpri-week1 idpri-week2
+soprj5: soprj5-vragen
 
 ewrite-email: prepare
 	cd ewrite; pdflatex $(PDFLATEX_ARGS) ewrite-email.tex \
@@ -33,4 +34,8 @@ idpri-week2: prepare
 	neato -T png idpri/navigatiemodel.dot -o idpri/assets/navigatiemodel.png
 	cd idpri; pdflatex $(PDFLATEX_ARGS) idpri-week2.tex \
 		&& pdflatex $(PDFLATEX_ARGS) idpri-week2.tex
+
+soprj5-vragen: prepare
+	cd soprj5; pdflatex $(PDFLATEX_ARGS) soprj5-vragen.tex \
+		&& pdflatex $(PDFLATEX_ARGS) soprj5-vragen.tex
 

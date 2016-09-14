@@ -1,0 +1,91 @@
+\documentclass[11pt,english]{article}
+
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+
+\graphicspath{{assets/}}
+
+\lfoot{Patrick Spek}
+\cfoot{\today}
+\rfoot{\thepage/\pageref{LastPage}}
+
+\newcommand*{\Frontpage}{\begingroup
+	\hbox{%
+		\hspace*{0.2\textwidth}
+		\rule{1pt}{\textheight}
+		\hspace*{0.05\textwidth}
+		\parbox[b]{0.75\textwidth}{%
+			{\noindent\Huge\bfseries Park Inspect}\\[2\baselineskip] % Title
+			{\large \textit{Interview}}\\[4\baselineskip] % Tagline or further description
+			{\Large \textsc{\\
+				Tim Dirks \\
+				Donn\`eh Huwae \\
+				Merel Kokkeler \\
+				Chris Meesters \\
+				Kevin van Rossum \\
+				Patrick Spek \\
+				Mohammed Temizkan \\
+				Jonathan van der Voort \\
+			}}
+
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+	}
+\endgroup}
+
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+	% frontpage
+	\thispagestyle{empty}
+	\Frontpage{}
+	\newpage
+
+	% table of contents
+	\tableofcontents
+	\newpage
+
+	\section{Vragen}
+	\begin{enumerate}
+		\item Wat houdt het bedrijf in?
+		\item Wat wordt er van ons verwacht? (verslagen, rapporten en
+		dergelijke?)
+		\item Wat is het doel van de opdracht?
+		\item Wat voor applicatie moeten wij gaan maken? En wat zijn de
+		specificaties
+		\item Moet de informatie van voertuigen worden bijgehouden en zo ja,
+		wat voor informatie?
+		\item Welke data moet er verzameld worden over de parkeerplaats?
+		\item Hoeveel data moet er worden verzameld?
+		\begin{enumerate}
+			\item Hoeveel parkeerplaatsen?
+			\item Hoeveel vakken minimaal per parkeerplaats?
+		\end{enumerate}
+		\item Wat zijn geldige parkeerplaatsen?
+		\item Wanneer moet een parkeerplaats geteld worden? Ook als er
+		bijvoorbeeld een motor staat?
+		\item In hoeveel verschillende regio’s moet er gecontroleerd worden?
+		\item Wat word er verwacht van de applicatie?
+		\item Moeten speciale evenementen meegeteld worden en hoe moet er
+		rekening mee gehouden worden?
+	\end{enumerate}
+
+	\newpage
+	\section{Wat weten we}
+	\begin{itemize}
+		\item Er moet een vragenlijst worden gemaakt dat wordt gebruikt bij het
+		controleren van parkeerplaatsen.
+	\end{itemize}
+
+	\newpage
+	\section{Willekeurige informatie}
+	\begin{itemize}
+		\item Per parkeerplaats 2 keer in de week controleren.
+	\end{itemize}
+\end{document}
+

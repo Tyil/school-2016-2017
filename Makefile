@@ -1,3 +1,11 @@
+# Author: Patrick Spek <p.spek@tyil.work>
+#
+# License: GPLv3
+#
+# This Makefile generates all the PDF files from the latex documents. The
+# double `pdflatex` call is to make sure the page numbering and tables of
+# content are correct.
+
 DESTDIR?=$(CURDIR)/pdf_output
 PDFLATEX_ARGS=-output-directory "$(DESTDIR)"
 

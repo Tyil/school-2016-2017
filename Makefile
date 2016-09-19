@@ -22,7 +22,7 @@ prepare:
 refresh:
 	rm -r "$(DESTDIR)"
 
-ewrite: ewrite-email ewrite-portfolio
+ewrite: ewrite-email ewrite-summary ewrite-portfolio
 idpri: idpri-week1 idpri-week2
 soprj5: soprj5-vragen
 
@@ -33,6 +33,10 @@ ewrite-email: prepare
 ewrite-portfolio: prepare
 	cd ewrite; pdflatex $(PDFLATEX_ARGS) ewrite-portfolio.tex \
 		&& pdflatex $(PDFLATEX_ARGS) ewrite-portfolio.tex
+
+ewrite-summary: prepare
+	cd ewrite; pdflatex $(PDFLATEX_ARGS) ewrite-summary.tex \
+		&& pdflatex $(PDFLATEX_ARGS) ewrite-summary.tex
 
 idpri-week1: prepare
 	cd idpri; pdflatex $(PDFLATEX_ARGS) idpri-week1.tex \

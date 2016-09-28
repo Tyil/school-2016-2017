@@ -159,7 +159,7 @@ Next up is mounting all filesystems so we can install files to them. First, we
 mount the root filesystem:
 
 ```
-mount /dev/mapper/krata0-root /mnt/gentoo
+mount /dev/mapper/funtoo0-root /mnt/gentoo
 ```
 
 Now we can add some directories for the other mountpoints. This can be done in

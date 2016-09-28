@@ -200,8 +200,7 @@ tar xpf stage3-latest.tar.xz
 ```
 
 Once extraction is complete, you can opt to delete the tarball as it is no
-longer needed at this point. You can delete it by invoking `rm
-stage3-latest.tar.gz`.
+longer needed at this point. You can delete it by invoking `rm stage3-latest.tar.gz`.
 
 ### System configuration
 You now have a bare Funtoo installation ready on your machine. But before you
@@ -255,8 +254,8 @@ emerge --sync
 Everytime you want to update your system, you will have to do an `emerge --sync`
 to update the portage tree first. It is managed by `git`, which can bring some
 side effects. The most notable one is that the tree will grow over time with old
-commit data. If you wish to clean this up, simply `rm -rf /usr/portage/* &&
-emerge --sync` to regenerate it from scratch
+commit data. If you wish to clean this up, simply
+`rm -rf /usr/portage/* && emerge --sync` to regenerate it from scratch
 
 #### Setting up your system settings
 #### Preparing your first kernel

@@ -79,8 +79,9 @@ Let us wipe the entire disk and start with a clean slate. You can do this by
 typing `o` and pressing enter. When asked wether you are sure, type `y` and
 enter again.
 
-Now we will create two partitions, one for `/boot` and one for `lvm`. Following
-is a list of what to enter. `<CR>` denotes pressing the enter key.
+Now we will create two partitions, one for `/boot` and one for
+[`lvm`][wikipedia-lvm]. Following is a list of what to enter. `<CR>` denotes
+pressing the enter key.
 
 - `n` `<CR>`
 - `<CR>`
@@ -96,8 +97,9 @@ is a list of what to enter. `<CR>` denotes pressing the enter key.
 
 #### Setting up encryption
 Any system should be safe. Encryption is just a small part, but in my opinion
-very important. We are going to encrypt the entire `lvm` partition using `luks`.
-The frontend tool to be used for this is `cryptsetup`:
+very important. We are going to encrypt the entire `lvm` partition using
+[`luks`][wikipedia-luks]. The frontend tool to be used for this is
+[`cryptsetup`][wikipedia-cryptsetup]:
 
 ```
 cryptsetup --cipher aes-xts-plain64 --hash sha512 --key-size 256 luksFormat /dev/sda2
@@ -149,8 +151,8 @@ mkswap /dev/mapper/funtoo0-swap
 ```
 
 If you're thinking at this point "where's my home partition?", it's not
-initialized here. ZFS requires custom kernel modules which will be built later,
-after the initial kernel has been compiled.
+initialized here. [ZFS][wikipedia-zfs] requires custom kernel modules which will
+be built later, after the initial kernel has been compiled.
 
 #### Mount the filesystems
 Next up is mounting all filesystems so we can install files to them. First, we
@@ -208,11 +210,11 @@ You now have a bare Funtoo installation ready on your machine. But before you
 can actually use it, you should do some configuration.
 
 #### Chrooting
-Before we get to the configuration part, we should `chroot` into the system.
-This allows you to enter your new Funtoo installation before it can properly
-boot. If your system ever breaks and you are unable to boot into it anymore, you
-can redo the mounting section of this guide and this chrooting section to get
-into it and resolve your issues.
+Before we get to the configuration part, we should [`chroot`][wikipedia-chroot]
+into the system. This allows you to enter your new Funtoo installation before it
+can properly boot. If your system ever breaks and you are unable to boot into it
+anymore, you can redo the mounting section of this guide and this chrooting
+section to get into it and resolve your issues.
 
 The chrooting requires a couple extra mounts, so the chroot can interface with
 the hardware provided by the system above it:
@@ -240,7 +242,8 @@ However, as I use multiple sources for my portage tree, I prefer to set it up
 under `/usr/portage/funtoo`. This is not a required step, but advised nonetheless.
 
 In order to change this, open up `/etc/portage/repos.conf/gentoo` in your
-favourite editor. Funtoo comes with `vi`, `nano` and `ed` by default. `ed` is
+favourite editor. Funtoo comes with [`vi`][wikipedia-vi],
+[`nano`][wikipedia-nano] and [`ed`][wikipedia-ed] by default. `ed` is
 recommended as the standard editor. After opening the file, change the
 `location` key to point to `/usr/portage/funtoo`.
 
@@ -253,9 +256,9 @@ emerge --sync
 ```
 
 Everytime you want to update your system, you will have to do an `emerge --sync`
-to update the portage tree first. It is managed by `git`, which can bring some
-side effects. The most notable one is that the tree will grow over time with old
-commit data. If you wish to clean this up, simply
+to update the portage tree first. It is managed by [`git`][wikipedia-git], which
+can bring some side effects. The most notable one is that the tree will grow
+over time with old commit data. If you wish to clean this up, simply
 `rm -rf /usr/portage/* && emerge --sync` to regenerate it from scratch
 
 #### Setting up your system settings
@@ -518,9 +521,10 @@ zfs create -o mountpoint=/home funtooz/home
 ```
 
 #### Installing a bootloader
-Before building your kernel, `boot-update` was installed. This pulls in `grub`,
-the recommended bootloader for Funtoo. It doesn't require a lot of configuration
-thanks to the `boot-update` script, which will configure `grub` for you.
+Before building your kernel, `boot-update` was installed. This pulls in
+[`grub`][wikipedia-grub], the recommended bootloader for Funtoo. It doesn't
+require a lot of configuration thanks to the `boot-update` script, which will
+configure `grub` for you.
 
 Before running the script, there's one place to update as this setup uses `luks`
 and `lvm`.
@@ -594,8 +598,9 @@ configuration file tweaked. If you opted to not use a given recommended package,
 you can skip the section with the same name.
 
 ##### connman
-`connman` is a simple **conn**ection **man**ager. It's lightweight, fast and
-does its job pretty well. To enable this service at boot, run
+[`connman`][wikipedia-connman] is a simple **conn**ection **man**ager. It's
+lightweight, fast and does its job pretty well. To enable this service at boot,
+run
 
 ```
 rc-update add connman default
@@ -605,10 +610,10 @@ If you want to setup wireless connection authentication credentials, read up on
 `man connman-service.conf`.
 
 ##### sudo
-The `sudo` utility allows certain users, based on their username or groups they
-belong to, access to privileged commands. It can also be used to run a command
-as a different user. The most basic setup allows people from the `wheel` group
-to execute commands normally reserved for `root`.
+The [`sudo`][wikipedia-sudo] utility allows certain users, based on their
+username or groups they belong to, access to privileged commands. It can also be
+used to run a command as a different user. The most basic setup allows people
+from the `wheel` group to execute commands normally reserved for `root`.
 
 Because sudo is a critical utility, it comes with its own editor that basically
 just wraps your preferred editor in a script that will complain if the
@@ -650,4 +655,16 @@ If you used a different username than `tyil`, be sure to change it here as well.
 [funtoo]: http://build.funtoo.org/distfiles/sysresccd/systemrescuecd-x86-4.7.1.iso
 [osuosl]: http://ftp.osuosl.org/pub/funtoo/distfiles/sysresccd/systemrescuecd-x86-4.7.1.iso
 [sysrescuecd]: http://www.system-rescue-cd.org/SystemRescueCd_Homepage
+[wikipedia-chroot]: https://en.wikipedia.org/wiki/Chroot
+[wikipedia-connman]: https://en.wikipedia.org/wiki/ConnMan
+[wikipedia-cryptsetup]: https://en.wikipedia.org/wiki/Dm-crypt#cryptsetup
+[wikipedia-ed]: https://en.wikipedia.org/wiki/Ed_(text_editor)
+[wikipedia-git]: https://en.wikipedia.org/wiki/Git
+[wikipedia-grub]: https://en.wikipedia.org/wiki/GNU_GRUB
+[wikipedia-luks]: https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup
+[wikipedia-lvm]: https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)
+[wikipedia-nano]: https://en.wikipedia.org/wiki/GNU_nano
+[wikipedia-sudo]: https://en.wikipedia.org/wiki/Sudo
+[wikipedia-vi]: https://en.wikipedia.org/wiki/Vi
+[wikipedia-zfs]: https://en.wikipedia.org/wiki/ZFS
 

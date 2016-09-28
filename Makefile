@@ -22,7 +22,7 @@ prepare:
 refresh:
 	rm -r "$(DESTDIR)"
 
-ewrite: ewrite-email ewrite-summary ewrite-portfolio
+ewrite: ewrite-email ewrite-summary ewrite-tutorial ewrite-portfolio
 idpri: idpri-week1 idpri-week2 idpri-week3
 soprj5: soprj5-vragen
 
@@ -37,6 +37,11 @@ ewrite-portfolio: prepare
 ewrite-summary: prepare
 	cd ewrite; pdflatex $(PDFLATEX_ARGS) ewrite-summary.tex \
 		&& pdflatex $(PDFLATEX_ARGS) ewrite-summary.tex
+
+ewrite-tutorial: prepare
+	cd ewrite; pandoc --template=ewrite-tutorial.tex -s ewrite-tutorial.md \
+		-o ewrite-tutorial.pdf
+	mv ewrite/ewrite-tutorial.pdf pdf_output
 
 idpri-week1: prepare
 	cd idpri; pdflatex $(PDFLATEX_ARGS) idpri-week1.tex \

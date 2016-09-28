@@ -28,8 +28,12 @@ mount path/to/sysrescuecd.iso /mnt/cdrom
 ```
 
 Once it is mounted, you can run the installer bundled with the image by running
-`/mnt/cdrom/usb_inst.sh`. Select the right device and wait for the installer to
-finish up.
+
+```
+/mnt/cdrom/usb_inst.sh
+```
+
+Select the right device and wait for the installer to finish up.
 
 #### Booting the USB
 To begin using the live environment so you can install something with it, boot
@@ -67,10 +71,13 @@ If you already an advanced user, you are of course free to diverge from the
 guide here.
 
 #### Partition the drive
-The first part is to setup partitions. This can be done by calling `gdisk
-/dev/sda`. Let us wipe the entire disk and start with a clean slate. You can do
-this by typing `o` and pressing enter. When asked wether you are sure, type `y`
-and enter again.
+The first part is to setup partitions. This can be done by calling
+
+```gdisk /dev/sda```
+
+Let us wipe the entire disk and start with a clean slate. You can do this by
+typing `o` and pressing enter. When asked wether you are sure, type `y` and
+enter again.
 
 Now we will create two partitions, one for `/boot` and one for `lvm`. Following
 is a list of what to enter. `<CR>` denotes pressing the enter key.
@@ -90,8 +97,11 @@ is a list of what to enter. `<CR>` denotes pressing the enter key.
 #### Setting up encryption
 Any system should be safe. Encryption is just a small part, but in my opinion
 very important. We are going to encrypt the entire `lvm` partition using `luks`.
-The frontend tool to be used for this is `cryptsetup`: `cryptsetup --cipher
-aes-xts-plain64 --hash sha512 --key-size 256 luksFormat /dev/sda2`.
+The frontend tool to be used for this is `cryptsetup`:
+
+```
+cryptsetup --cipher aes-xts-plain64 --hash sha512 --key-size 256 luksFormat /dev/sda2`
+```
 
 `cryptsetup` will ask you for a passphrase. Make sure to use a good one,
 preferably at least 20 characters in length.

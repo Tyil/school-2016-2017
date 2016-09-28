@@ -421,7 +421,8 @@ CXXFLAGS="-O2 -pipe"
 This variable is not as important as the others. You can even opt to leave it
 out completely. If, however, you wish to limit portage to only install free
 software (free as in freedom, not gratis), you can set it to the same value as
-me.
+me. Do note that if you use this, you will need to setup the
+`/etc/portage/package.license` as well.
 
 ```
 ACCEPT_LICENSE="
@@ -471,6 +472,19 @@ mkdir -p /etc/portage/package.mask
 echo ">sys-kernel/*-sources-4.4.6" > /etc/portage/package.mask/20-zfs.mask
 ```
 
+##### /etc/portage/package.license
+This file can be setup as a directory too, just like `make.conf` and
+`package.mask`. Using this file or directory you can add per-package license
+exceptions. This is therefore only needed if you setup a strict license limit.
+The kernel comes with some sources under the `freedist` license, which is not
+part of `@FREE`. As such, if you want to install kernel sources you will have to
+make an exception for this license on this package.
+
+```
+mkdir -p /etc/portage/package.license
+echo "sys-kernel/* freedist" # TODO: check if this works
+```
+
 ##### /etc/conf.d/hostname
 As one of the last files to setup, the hostname should be set in
 `/etc/conf.d/hostname`. The `hostname` variable in this file should be set to
@@ -513,9 +527,9 @@ ZFS modules.
 First install the kernel module, then format the partition, and configure zfs to
 work with it.
 
-!!! THIS REQUIRES FURTHER TESTING !!!
 ```
 emerge zfs
+modprobe zfs # TODO: check if this part and further actually works in the chroot
 zpool create funtooz /dev/sda
 zfs create -o mountpoint=/home funtooz/home
 ```

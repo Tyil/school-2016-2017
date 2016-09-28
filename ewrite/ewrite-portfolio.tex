@@ -42,6 +42,10 @@
 
 \renewcommand{\footrulewidth}{0.4pt}
 
+% additional markup for included documents
+\usepackage{hyperref}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 \begin{document}
 	% frontpage
 	\thispagestyle{empty}
@@ -71,5 +75,9 @@
   \newpage
   \section{The executive summary}
   \input{ewrite-summary}
+
+  \newpage
+  \section{The technical tutorial}
+  \input{ewrite-tutorial}
 \end{document}
 

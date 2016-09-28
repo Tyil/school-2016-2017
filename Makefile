@@ -15,6 +15,7 @@ clean:
 	rm -f $(DESTDIR)/*.aux
 	rm -f $(DESTDIR)/*.log
 	rm -f $(DESTDIR)/*.toc
+	rm -f ewrite/ewrite-tutorial.tex
 
 prepare:
 	mkdir -p "$(DESTDIR)"
@@ -31,6 +32,7 @@ ewrite-email: prepare
 		&& pdflatex $(PDFLATEX_ARGS) ewrite-email.tex
 
 ewrite-portfolio: prepare
+	cd ewrite; pandoc -s ewrite-tutorial.md -o ewrite-tutorial.tex
 	cd ewrite; pdflatex $(PDFLATEX_ARGS) ewrite-portfolio.tex \
 		&& pdflatex $(PDFLATEX_ARGS) ewrite-portfolio.tex
 
@@ -39,7 +41,7 @@ ewrite-summary: prepare
 		&& pdflatex $(PDFLATEX_ARGS) ewrite-summary.tex
 
 ewrite-tutorial: prepare
-	cd ewrite; pandoc --template=ewrite-tutorial.tex -s ewrite-tutorial.md \
+	cd ewrite; pandoc --template=ewrite-tutorial.textpl -s ewrite-tutorial.md \
 		-o ewrite-tutorial.pdf
 	mv ewrite/ewrite-tutorial.pdf pdf_output
 

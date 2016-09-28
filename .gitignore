@@ -6,6 +6,9 @@
 *.log
 *.toc
 
+# intermediate latex files
+ewrite/ewrite-tutorial.tex
+
 # vim swapfiles
 .*.sw?
 

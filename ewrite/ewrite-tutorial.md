@@ -3,8 +3,14 @@
 ## Foreword
 
 ## Assumptions
+This tutorial assumes you are not the most basic of computer users. Some
+experience with GNU+Linux is expected. If you have fear for text-based
+applications, this tutorial is definately not for you.
 
 ## Installing Funtoo
+This tutorial will guide you through a not-so-basic installation of the Funtoo
+GNU+Linux distribution. It is based on one of my own installations, but
+slightly simplified.
 
 ### The live environment
 Before you can get started with setting up the system, you will need something to

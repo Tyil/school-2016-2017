@@ -7,7 +7,7 @@
 ## Installing Funtoo
 
 ### The live environment
-Before we can get started with setting up the system, we will need something to
+Before you can get started with setting up the system, you will need something to
 set it up with. We will be using a live environment for this purpose. My
 personal choice for this task is [the Gentoo-based SystemRescueCD][sysrescuecd].
 
@@ -44,14 +44,15 @@ these options differs per machine, so be sure to check the manual or look around
 online for instructions if it is not clear to you.
 
 ### Hardware preparation
-The hardware we are installing on needs to be prepared. This could mean manually
-configuring your hardware RAID if you use this and configuring other exotic
-setups. This tutorial will not go into details for such setups, as there is a
-near infinite amount of possible options. Instead, we will stick to simply
-configuring your storage device.
+The hardware you are installing on needs to be prepared. This could mean
+manually configuring your hardware RAID if you use this and configuring other
+exotic setups. This tutorial will not go into details for such setups, as there
+is a near infinite amount of possible options. Instead, you should stick to
+simply configuring your storage device.
 
-The size of your storage device should be at least 35GB to be safe and have some
-space for personal data. The partitioning layout we are aiming for is the following:
+The size of your storage device should be at least 35GB to be safe and have
+some space for personal data. The partitioning layout this guide is aiming for
+is the following:
 
 ```
 DEVICE                 FILESYSTEM  SIZE  MOUNTPOINT
@@ -79,7 +80,7 @@ Let us wipe the entire disk and start with a clean slate. You can do this by
 typing `o` and pressing enter. When asked wether you are sure, type `y` and
 enter again.
 
-Now we will create two partitions, one for `/boot` and one for
+Now you are going to create two partitions, one for `/boot` and one for
 [`lvm`][wikipedia-lvm]. Following is a list of what to enter. `<CR>` denotes
 pressing the enter key.
 
@@ -112,7 +113,7 @@ Once the partition has been encrypted, open the device so it can be used by
 invoking `cryptsetup luksOpen /dev/sda2 dmcrypt_lvm`.
 
 #### Set up LVM
-Once the encrypted partition has been unlocked, we can setup `lvm` on it. To
+Once the encrypted partition has been unlocked, you can setup `lvm` on it. To
 initialize an lvm volume on this partition, run the following:
 
 ```
@@ -120,7 +121,7 @@ pvcreate /dev/mapper/dmcrypt_lvm
 vgcreate funtoo0 /dev/mapper/dmcrypt_lvm
 ```
 
-The lvm volume has now been prepared, and we can start adding volumes to it to
+The lvm volume has now been prepared, and you can start adding volumes to it to
 be used as partitions. It is recommended to have a swap partition as well. The
 size of this partition depends on the amount of RAM you have available. Due to
 my availability to big disks, I generally opt for a swap partition the same size
@@ -138,7 +139,7 @@ lvcreate -l 100%FREE -n home funtoo0
 ```
 
 #### Create filesystems
-Now we are ready to create usable filesystems on the partitions:
+Now you are ready to create usable filesystems on the partitions:
 
 ```
 mkfs.vfat -F32 /dev/sda1
@@ -155,21 +156,21 @@ initialized here. [ZFS][wikipedia-zfs] requires custom kernel modules which will
 be built later, after the initial kernel has been compiled.
 
 #### Mount the filesystems
-Next up is mounting all filesystems so we can install files to them. First, we
+Next up is mounting all filesystems so you can install files to them. First, you
 mount the root filesystem:
 
 ```
 mount /dev/mapper/funtoo0-root /mnt/gentoo
 ```
 
-Now we can add some directories for the other mountpoints. This can be done in
+Now you can add some directories for the other mountpoints. This can be done in
 one well-made `mkdir` invocation:
 
 ```
 mkdir -p /mnt/gentoo/{boot,home,usr/{portage,src},var/{tmp,distfiles,packages},tmp}
 ```
 
-Next we can mount all other mountpoints on the new directories:
+Next you can mount all other mountpoints on the new directories:
 
 ```
 mount /dev/sda1 /mnt/gentoo/boot
@@ -210,7 +211,7 @@ You now have a bare Funtoo installation ready on your machine. But before you
 can actually use it, you should do some configuration.
 
 #### Chrooting
-Before we get to the configuration part, we should [`chroot`][wikipedia-chroot]
+Before you get to the configuration part, you should [`chroot`][wikipedia-chroot]
 into the system. This allows you to enter your new Funtoo installation before it
 can properly boot. If your system ever breaks and you are unable to boot into it
 anymore, you can redo the mounting section of this guide and this chrooting
@@ -653,8 +654,8 @@ will allow the user to execute root commands using `sudo`.
 
 #### Set passwords
 We probably want to be able to login to the system as well. By default, users
-without passwords are disabled, so we'll need to set a password for the users we
-want to be able to use:
+without passwords are disabled, so you'll need to set a password for the users
+you want to be able to use:
 
 ```
 passwd root

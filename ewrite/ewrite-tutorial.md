@@ -670,7 +670,22 @@ passwd tyil
 
 If you used a different username than `tyil`, be sure to change it here as well.
 
-## Final thoughts
+### First boot
+Installation is now finished, so it is time to boot into your new Funtoo system.
+First you should cleanly unmount all partitions and then issue a reboot:
+
+```
+exit
+cd
+umount -lR /mnt/gentoo
+reboot
+```
+
+If you set your UEFI to favour the USB system over the standard drive in the
+booting order, be sure to either change this back, or simply remove the USB
+device.
+
+## What's next
 
 [funtoo-build]: http://build.funtoo.org/
 [funtoo]: http://build.funtoo.org/distfiles/sysresccd/systemrescuecd-x86-4.7.1.iso

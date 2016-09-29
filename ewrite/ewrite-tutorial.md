@@ -5,7 +5,7 @@
 ## Assumptions
 This tutorial assumes you are not the most basic of computer users. Some
 experience with GNU+Linux is expected. If you have fear for text-based
-applications, this tutorial is definately not for you.
+applications, this tutorial is definitely not for you.
 
 ## Installing Funtoo
 This tutorial will guide you through a not-so-basic installation of the Funtoo

@@ -524,7 +524,33 @@ The `genkernel` command will run the kernel menuconfig utility. If you have
 exotic hardware that needs special support, this is the place to enable it. The
 defaults are sane for most systems. If you have nothing to configure here, just
 exit the menuconfig and let `genkernel` build a custom kernel and initramfs for
-you.
+you. As the guide uses LVM and LUKS, you will need to have support for these
+things in your kernel. You will need to enable the following options at the
+very least:
+
+```
+General setup --->
+    [*] Initial RAM filesystem and RAM disk (initramfs/initrd) support
+```
+
+```
+Device Drivers --->
+    Generic Driver Options --->
+        [*] Maintain a devtmpfs filesystem to mount at /dev
+```
+
+```
+Device Drivers --->
+    [*] Multiple devices driver support --->
+        <*>Device Mapper Support
+        <*> Crypt target support
+```
+
+```
+Cryptographic API --->
+    <*> XTS support
+    -*-AES cipher algorithms
+```
 
 #### Setup ZFS
 The kernel is now installed at `/boot`, and all the required parts to build

@@ -15,3 +15,6 @@ ewrite/ewrite-tutorial.tex
 # random stuff that shouldn't be added to the repo
 */auto/*.el
 
+# all content in here should be generated
+pdf_output/*
+

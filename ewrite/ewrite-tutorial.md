@@ -232,8 +232,15 @@ mount --rbind /dev dev
 mount --rbind /sys sys
 ```
 
-Once these mountpoints are set, you can enter your Funtoo installation using the
-following:
+Once these mountpoints are set, you will need to copy over `resolv.conf` so the
+chroot can resolve DNS names:
+
+```
+cp /etc/resolv.conf etc
+```
+
+Now that everything is prepared in the chroot, you can enter your Funtoo
+installation using the following:
 
 ```
 chroot . bash -l

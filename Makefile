@@ -24,7 +24,7 @@ refresh:
 	rm -r "$(DESTDIR)"
 
 ewrite: ewrite-email ewrite-summary ewrite-tutorial ewrite-portfolio
-idpri: idpri-week1 idpri-week2 idpri-week3
+idpri: idpri-week1 idpri-week2 idpri-week3 idpri-week4
 soprj5: soprj5-vragen
 
 ewrite-email: prepare
@@ -57,6 +57,10 @@ idpri-week2: prepare
 idpri-week3: prepare
 	cd idpri; pdflatex $(PDFLATEX_ARGS) idpri-week3.tex \
 		&& pdflatex $(PDFLATEX_ARGS) idpri-week3.tex
+
+idpri-week4: prepare
+	cd idpri; pdflatex $(PDFLATEX_ARGS) idpri-week4.tex \
+		&& pdflatex $(PDFLATEX_ARGS) idpri-week4.tex
 
 soprj5-vragen: prepare
 	cd soprj5; pdflatex $(PDFLATEX_ARGS) soprj5-vragen.tex \

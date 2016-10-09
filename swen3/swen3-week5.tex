@@ -1,0 +1,218 @@
+\documentclass[11pt,english]{article}
+
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[top=2.3cm, bottom=2.3cm, left=1.6cm, right=1.6cm]{geometry}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{standalone}
+
+\setlength{\parindent}{0pt}        % indentation on new paragraph
+\setlength{\parskip}{0pt}          % vertical spacing on new paragraph
+\setlength{\lineskip}{1pt}         % vertical spacing between lines
+\setlength{\columnsep}{1cm}        % spacing between columns
+\setlength{\belowcaptionskip}{0pt} % spacing below captions
+\setlength{\abovecaptionskip}{5pt} % spacong above captions
+
+\pagestyle{fancy}
+
+\graphicspath{{assets/}}
+
+\lfoot{Patrick Spek}
+\cfoot{\today}
+\rfoot{\thepage/\pageref{LastPage}}
+
+\newcommand*{\Frontpage}{\begingroup
+	\hbox{%
+		\hspace*{0.2\textwidth}
+		\rule{1pt}{\textheight}
+		\hspace*{0.05\textwidth}
+		\parbox[b]{0.75\textwidth}{%
+			{\noindent\Huge\bfseries Software Engineering 3}\\[2\baselineskip] % Title
+			{\large \textit{Homework assignments}}\\[4\baselineskip] % Tagline or further description
+			{\Large \textsc{\\
+				Patrick Spek \\
+			}}
+
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+	}
+\endgroup}
+
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+	% frontpage
+	\thispagestyle{empty}
+	\Frontpage{}
+	\newpage
+
+	% table of contents
+	\tableofcontents
+
+	% main body
+	\newpage
+	\section{Requirement 1}
+	\textbf{Requirement:} 1.1.1 \\
+	\textbf{Requirement type:} Functioneel \\
+	\textbf{Events/Use cases:} \\
+	\\
+	\textbf{Description:} De gebruiker moet de naam of klantnummer in kunnen voeren van een klant. \\
+	\textbf{Rationale:} De gebruiker moet klantgegevens op kunnen zoeken. \\
+	\textbf{Originator:} Gebruiker \\
+	\textbf{Fit criterion:}
+	\begin{itemize}
+		\item Er moet een veld beschikbaar zijn om alphanumerieke gegevens in te vullen.
+	\end{itemize}
+	\textbf{Customer satisfaction:} 5 \\
+	\textbf{Customer dissatisfaction:} 5 \\
+	\textbf{Priority:}High \\
+	\textbf{Conflicts:} None \\
+	\textbf{Supporting materials:} N/A \\
+	\textbf{History:} N/A \\
+
+	\newpage
+	\section{Requirement 2}
+	\textbf{Requirement:} 1.1.2 \\
+	\textbf{Requirement type:} \\
+	\textbf{Events/Use cases:} \\
+	\\
+	\textbf{Description:} Het systeem kan de klantgegevens tonen. \\
+	\textbf{Rationale:} De gebruiker moet de opgevraagde gegevens in kunnen zien. \\
+	\textbf{Originator:} Gebruiker \\
+	\textbf{Fit criterion:}
+	\begin{itemize}
+		\item Gegevens uit de database van de betreffende klant zijn zichtbaar
+		op het scherm.
+	\end{itemize}
+	\textbf{Customer satisfaction:} 5 \\
+	\textbf{Customer dissatisfaction:} 5 \\
+	\textbf{Priority:} High \\
+	\textbf{Conflicts:} None \\
+	\textbf{Supporting materials:} N/A \\
+	\textbf{History:} N/A \\
+
+	\newpage
+	\section{Requirement 3}
+	\textbf{Requirement:} 1.2.1 \\
+	\textbf{Requirement type:} Functioneel \\
+	\textbf{Event/Use case:} \\
+	\\
+	\textbf{Description:} De gebruiker moet een nieuw klantbestand aan kunnen maken. \\
+	\textbf{Rationale:} Nieuwe klanten moeten in het systeem toegevoegd kunnen worden. \\
+	\textbf{Originator:} Gebruiker \\
+	\textbf{Fit criterion:}
+	\begin{itemize}
+		\item De gegevens van de nieuwe klant kunnen worden ingevuld
+	\end{itemize}
+	\textbf{Customer satisfaction:} 5 \\
+	\textbf{Customer dissatisfaction:} 5 \\
+	\textbf{Priority:} High \\
+	\textbf{Conflicts:} None \\
+	\textbf{Supporting materials:} N/A \\
+	\textbf{History:} N/A \\
+
+	\newpage
+	\section{Requirement 4}
+	\textbf{Requirement:} 1.2.2 \\
+	\textbf{Requirement type:} Functioneel \\
+	\textbf{Event/Use case:} \\
+	\\
+	\textbf{Description:} De gebruiker kan een nieuw klantbestand opslaan. \\
+	\textbf{Rationale:} Nieuwe klanten moeten in het systeem opgeslagen kunnen worden. \\
+	\textbf{Originator:} Gebruiker \\
+	\textbf{Fit criterion:}
+	\begin{itemize}
+		\item Na toevoeging zijn de klantgegevens beschikbaar in de database
+		\item De gegevens van de klant zijn op te zoeken met het systeem
+	\end{itemize}
+	\textbf{Customer satisfaction:} 5 \\
+	\textbf{Customer dissatisfaction:} 5 \\
+	\textbf{Priority:} High \\
+	\textbf{Conflicts:} None \\
+	\textbf{Supporting materials:} N/A \\
+	\textbf{History:} N/A \\
+
+	\newpage
+	\section{Requirement 5}
+	\textbf{Requirement:} 1.4.1 \\
+	\textbf{Requirement type:} Functioneel \\
+	\textbf{Event/Use case:} \\
+	\\
+	\textbf{Description:} De gebruiker moet de naam of productnummer in kunnen voeren van een klant. \\
+	\textbf{Rationale:} De gebruiker moet productgegevens op kunnen zoeken. \\
+	\textbf{Originator:} Gebruiker \\
+	\textbf{Fit criterion:}
+	\begin{itemize}
+		\item Er moet een veld beschikbaar zijn om alphanumerieke gegevens in te vullen
+	\end{itemize}
+	\textbf{Customer satisfaction:} 5 \\
+	\textbf{Customer dissatisfaction:} 5 \\
+	\textbf{Priority:} High \\
+	\textbf{Conflicts:} None \\
+	\textbf{Supporting materials:} N/A \\
+	\textbf{History:} N/A \\
+
+	\newpage
+	\section{Requirement 6}
+	\textbf{Requirement:} 1.4.2 \\
+	\textbf{Requirement type:} Functioneel \\
+	\textbf{Event/Use case:} \\
+	\\
+	\textbf{Description:} Het systeem kan de productgegevens tonen. \\
+	\textbf{Rationale:} De gebruiker moet de opgevraagde gegevens in kunnen zien. \\
+	\textbf{Originator:} Gebruiker \\
+	\textbf{Fit criterion:}
+	\begin{itemize}
+		\item Gegevens uit de database van de betreffende product zijn zichtbaar op het scherm
+	\end{itemize}
+	\textbf{Customer satisfaction:} 5 \\
+	\textbf{Customer dissatisfaction:} 5 \\
+	\textbf{Priority:} High \\
+	\textbf{Conflicts:} None \\
+	\textbf{Supporting materials:} N/A \\
+	\textbf{History:} N/A \\
+
+	\newpage
+	\section{Requirement 7}
+	\textbf{Requirement:} 1.3.1 \\
+	\textbf{Requirement type:} Functioneel \\
+	\textbf{Event/Use case:} \\
+	\\
+	\textbf{Description:} De gebruiker kan producten toevoegen aan een bestelling. \\
+	\textbf{Rationale:} Producten moeten in bestellingen kunnen komen zodat ze verkocht kunnen worden. \\
+	\textbf{Originator:} Gebruiker \\
+	\textbf{Fit criterion:}
+	\begin{itemize}
+		\item Het product moet in de bestelling staan
+	\end{itemize}
+	\textbf{Customer satisfaction:} 5 \\
+	\textbf{Customer dissatisfaction:} 5 \\
+	\textbf{Priority:} High \\
+	\textbf{Conflicts:} None \\
+	\textbf{Supporting materials:} N/A \\
+	\textbf{History:} N/A \\
+
+	\newpage
+	\section{Requirement 8}
+	\textbf{Requirement:} 1.3.2 \\
+	\textbf{Requirement type:} Functioneel \\
+	\textbf{Event/Use case:} \\
+	\\
+	\textbf{Description:} De gebruiker kan een gewijzigde bestelling opslaan. \\
+	\textbf{Rationale:} Een aangepastte bestelling moet bewaard worden in het systeem. \\
+	\textbf{Originator:} Gebruiker \\
+	\textbf{Fit criterion:}
+	\begin{itemize}
+		\item Na toevoeging zijn de bestellingsgegevens beschikbaar in de database
+		\item De aangepaste bestelling is op te zoeken met het systeem
+	\end{itemize}
+	\textbf{Customer satisfaction:} 5 \\
+	\textbf{Customer dissatisfaction:} 5 \\
+	\textbf{Priority:} High \\
+	\textbf{Conflicts:} None \\
+	\textbf{Supporting materials:} N/A \\
+	\textbf{History:} N/A \\
+\end{document}
+

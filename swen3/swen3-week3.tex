@@ -1,0 +1,61 @@
+\documentclass[11pt,english]{article}
+
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[top=2.3cm, bottom=2.3cm, left=1.6cm, right=1.6cm]{geometry}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{standalone}
+
+\setlength{\parindent}{0pt}        % indentation on new paragraph
+\setlength{\parskip}{0pt}          % vertical spacing on new paragraph
+\setlength{\lineskip}{1pt}         % vertical spacing between lines
+\setlength{\columnsep}{1cm}        % spacing between columns
+\setlength{\belowcaptionskip}{0pt} % spacing below captions
+\setlength{\abovecaptionskip}{5pt} % spacong above captions
+
+\pagestyle{fancy}
+
+\graphicspath{{assets/}}
+
+\lfoot{Patrick Spek}
+\cfoot{\today}
+\rfoot{\thepage/\pageref{LastPage}}
+
+\newcommand*{\Frontpage}{\begingroup
+	\hbox{%
+		\hspace*{0.2\textwidth}
+		\rule{1pt}{\textheight}
+		\hspace*{0.05\textwidth}
+		\parbox[b]{0.75\textwidth}{%
+			{\noindent\Huge\bfseries Software Engineering 3}\\[2\baselineskip] % Title
+			{\large \textit{Homework assignments}}\\[4\baselineskip] % Tagline or further description
+			{\Large \textsc{\\
+				Patrick Spek \\
+			}}
+
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+	}
+\endgroup}
+
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+	% frontpage
+	\thispagestyle{empty}
+	\Frontpage{}
+	\newpage
+
+	% table of contents
+	\tableofcontents
+	\newpage
+
+	% main body
+	\section{Product Use Cases}
+
+	\newpage
+	\section{Use Case Diagram}
+\end{document}
+

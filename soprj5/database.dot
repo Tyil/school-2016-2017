@@ -1,0 +1,31 @@
+digraph G {
+	overlap = false
+
+	node [
+		fontsize = 8
+		shape = record
+	]
+
+	"customer" [ label = "{Customer|+id : int}" ]
+	"employee" [ label = "{Employee|+id : int\l+name : string\l+role_id : int}" ]
+	"role" [ label = "{Role|+id : int\l+description : string}" ]
+	"inspection" [ label = "{Inspection|+id : int\l+date : date\l+deadline : date\l+employee_id : int\l+question_list : int\l+parking_area : int}" ]
+	"questionlist" [ label = "{Questionlist|+id : int\l+version : int}" ]
+	"question" [ label = "{Question|+id : int\l+question : string}" ]
+	"question_option" [ label = "{QuestionOption|+question_id : int\l+option : string}" ]
+	"answer" [ label = "{Answer|+question_id : int\l+inspection_id : int\l+answer : string}" ]
+	"parking_area" [ label = "{Parkeerplaats}" ]
+	"questiontype" [ label = "{QuestionType|id : int\ltype : string}" ]
+
+	questiontype -> question
+	parking_area -> inspection
+	role -> employee
+	inspection -> employee
+	inspection -> customer
+	answer -> inspection
+	questionlist -> inspection
+	question -> questionlist
+	answer -> question
+	question_option -> question
+}
+

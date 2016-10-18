@@ -21,7 +21,7 @@ prepare:
 	mkdir -p "$(DESTDIR)"
 
 refresh:
-	rm -r "$(DESTDIR)"
+	rm -fr "$(DESTDIR)"
 
 ewrite: ewrite-email ewrite-email-new ewrite-summary ewrite-summary-new ewrite-tutorial ewrite-tutorial-new ewrite-portfolio
 idpri: idpri-week1 idpri-week2 idpri-week3 idpri-week4

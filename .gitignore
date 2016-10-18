@@ -8,6 +8,7 @@
 
 # intermediate latex files
 ewrite/ewrite-tutorial.tex
+ewrite/ewrite-tutorial-new.tex
 
 # vim swapfiles
 .*.sw?

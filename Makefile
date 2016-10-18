@@ -36,8 +36,20 @@ ewrite-email-new: prepare
 		&& pdflatex $(PDFLATEX_ARGS) ewrite-email-new.tex
 
 ewrite-portfolio: prepare
-	#cd ewrite; pandoc -s ewrite-tutorial.md -o ewrite-tutorial.tex
-	#cd ewrite; pandoc -s ewrite-tutorial-new.md -o ewrite-tutorial-new.tex
+	cd ewrite; pandoc -s ewrite-tutorial.md -o ewrite-tutorial.tex
+	sed -i 1,52d ewrite/ewrite-tutorial.tex
+	sed -i 2,3d ewrite/ewrite-tutorial.tex
+	sed -i 's/\\section/\\subsubsection/g' ewrite/ewrite-tutorial.tex
+	sed -i 's/\\subsection/\\subsubsection/g' ewrite/ewrite-tutorial.tex
+	sed -i 's/\\paragraph{\(.*\)}.*/\\textbf{\1}\n\\\\/' ewrite/ewrite-tutorial.tex
+	sed -i 's/\\subparagraph{\(.*\)}.*/\\textbf{\1}\n\\\\/' ewrite/ewrite-tutorial.tex
+	cd ewrite; pandoc -s ewrite-tutorial-new.md -o ewrite-tutorial-new.tex
+	sed -i 1,52d ewrite/ewrite-tutorial-new.tex
+	sed -i 2,3d ewrite/ewrite-tutorial-new.tex
+	sed -i 's/\\section/\\subsubsection/g' ewrite/ewrite-tutorial-new.tex
+	sed -i 's/\\subsection/\\subsubsection/g' ewrite/ewrite-tutorial-new.tex
+	sed -i 's/\\paragraph{\(.*\)}.*/\\textbf{\1}\n\\\\/' ewrite/ewrite-tutorial-new.tex
+	sed -i 's/\\subparagraph{\(.*\)}.*/\\textbf{\1}\n\\\\/' ewrite/ewrite-tutorial-new.tex
 	cd ewrite; pdflatex $(PDFLATEX_ARGS) ewrite-portfolio.tex \
 		&& pdflatex $(PDFLATEX_ARGS) ewrite-portfolio.tex
 

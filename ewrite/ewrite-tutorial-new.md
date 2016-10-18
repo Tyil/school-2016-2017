@@ -295,7 +295,7 @@ can bring some side effects. The most notable one is that the tree will grow
 over time with old commit data. If you wish to clean this up, simply
 `rm -rf /usr/portage/* && emerge --sync` to regenerate it from scratch
 
-#### Setting up your system settings
+#### System settings
 In order to make the system work properly, some setup has to be performed. This
 will involve editing some text files, for which you can use your favorite
 editor again.
@@ -526,7 +526,7 @@ As one of the last files to setup, the hostname should be set in
 the hostname of the machine. You can pick any name you like, but should be
 unique across your network.
 
-#### Preparing your first kernel
+#### Preparing the kernel
 Every system needs a kernel, a piece of software to interface with the hardware.
 Funtoo, like every GNU+Linux distribution, uses the Linux kernel for this task.
 

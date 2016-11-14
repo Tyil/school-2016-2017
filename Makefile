@@ -23,9 +23,14 @@ prepare:
 refresh:
 	rm -fr "$(DESTDIR)"
 
+datab3: datab3-week1
 ewrite: ewrite-email ewrite-email-new ewrite-summary ewrite-summary-new ewrite-tutorial ewrite-tutorial-new ewrite-portfolio
 idpri: idpri-week1 idpri-week2 idpri-week3 idpri-week4
 soprj5: soprj5-vragen
+
+datab3-week1: prepare
+	cd datab3; pdflatex $(PDFLATEX_ARGS) datab3-week1.tex \
+		&& pdflatex $(PDFLATEX_ARGS) datab3-week1.tex
 
 ewrite-email: prepare
 	cd ewrite; pdflatex $(PDFLATEX_ARGS) ewrite-email.tex \

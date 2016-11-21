@@ -9,7 +9,7 @@
 DESTDIR?=$(CURDIR)/pdf_output
 PDFLATEX_ARGS=-output-directory "$(DESTDIR)"
 
-all: refresh ewrite idpri soprj5 clean
+all: refresh abv ewrite idpri soprj5 clean
 
 clean:
 	rm -f $(DESTDIR)/*.aux
@@ -23,10 +23,15 @@ prepare:
 refresh:
 	rm -fr "$(DESTDIR)"
 
+abv: abv-week3
 datab3: datab3-week1
 ewrite: ewrite-email ewrite-email-new ewrite-summary ewrite-summary-new ewrite-tutorial ewrite-tutorial-new ewrite-portfolio
 idpri: idpri-week1 idpri-week2 idpri-week3 idpri-week4
 soprj5: soprj5-vragen
+
+abv-week3: prepare
+	cd abv; pdflatex $(PDFLATEX_ARGS) abv-week3.tex \
+		&& pdflatex $(PDFLATEX_ARGS) abv-week3.tex
 
 datab3-week1: prepare
 	cd datab3; pdflatex $(PDFLATEX_ARGS) datab3-week1.tex \

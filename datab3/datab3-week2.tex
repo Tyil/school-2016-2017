@@ -1,0 +1,188 @@
+\documentclass[11pt,english]{article}
+
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[top=2.3cm, bottom=2.3cm, left=1.6cm, right=1.6cm]{geometry}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{eurosym}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=SQL,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\pagestyle{fancy}
+\setlength{\parindent}{0pt}        % indentation on new paragraph
+\setlength{\parskip}{0pt}          % vertical spacing on new paragraph
+\setlength{\lineskip}{1pt}         % vertical spacing between lines
+\setlength{\columnsep}{1cm}        % spacing between columns
+\setlength{\belowcaptionskip}{0pt} % spacing below captions
+\setlength{\abovecaptionskip}{5pt} % spacong above captions
+
+\graphicspath{{assets/}}
+
+\lfoot{}
+\cfoot{\today}
+\rfoot{\thepage/\pageref{LastPage}}
+
+\newcommand*{\Frontpage}{\begingroup
+	\hbox{%
+		\hspace*{0.2\textwidth}
+		\rule{1pt}{\textheight}
+		\hspace*{0.05\textwidth}
+		\parbox[b]{0.75\textwidth}{%
+			{\noindent\Huge\bfseries DATAB3}\\[2\baselineskip] % Title
+			{\large \textit{Huiswerkopdrachten, week 2}}\\[4\baselineskip] % Tagline or further description
+			{\Large \textsc{\\
+				Patrick Spek, 2099745 \\
+				Chris Meesters, 2098474 \\
+			}}
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+	}
+\endgroup}
+
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+	\thispagestyle{empty}
+	\Frontpage
+
+	\newpage
+	\tableofcontents
+
+	\newpage
+	\section{Code}
+	\begin{lstlisting}
+CREATE OR REPLACE TRIGGER "LENING_BRI"
+
+BEFORE INSERT ON "LENING"
+
+FOR EACH ROW
+BEGIN
+	DECLARE NieuweSleutel_ integer;
+
+	BEGIN
+		SELECT nvl(max(ln.number, 0))
+		INTO NieuweSleutel_
+		FROM lening ln;
+		--
+		NieuweSleutel_ := NieuweSleutel_ + 1;
+		:new.nummber := NieuweSleutel_;
+	END
+END
+	\end{lstlisting}
+
+	\newpage
+	\section{Screenshot van de applicatie met nieuwe lening}
+	\includegraphics[scale=0.5]{week2-phone-newloan}
+
+	\newpage
+	\section{Screenshot van de object browser}
+	\makebox[\textwidth]{\includegraphics[width=\linewidth]{week2-om}}
+
+	\newpage
+	\section{Business use cases}
+	\subsection{Aanvragen van een lening}
+	\begin{tabularx}{\textwidth}{ l | X }
+		\textbf{Use case nummer} & 1 \\
+		\textbf{Naam} & Aanvragen van een lening \\
+		\textbf{Scenario} &
+		\begin{enumerate}
+			\item Gebruiker logt in op systeem
+			\item Gebruiker kiest nieuwe lening
+			\item Systeem toont mogelijke uitleners
+			\item Gebruiker kiest een uitlener
+			\item Systeem vraagt bedrag
+			\item Gebruiker vult bedrag in
+			\item Systeem maakt lening aan
+			\item Systeem schrijft geld over van uitlener naar gebruiker
+		\end{enumerate} \\
+		\textbf{Output} & Gebruiker heeft een nieuwe lening geopened.
+	\end{tabularx}
+
+	\newpage
+	\subsection{Afbetalen van een lening}
+	\begin{tabularx}{\textwidth}{ l | X }
+		\textbf{Use case nummer} & 2 \\
+		\textbf{Naam} & Afbetalen van een lening \\
+		\textbf{Scenario} &
+		\begin{enumerate}
+			\item Gebruiker logt in op systeem
+			\item Gebruiker kiest lening afbetalen
+			\item Systeem berekent rente
+			\item Systeem geeft totale kosten weer
+			\item Gebruiker voert in dat de lening betaald is
+			\item Systeem geeft aan dat de lening is afbetaal
+		\end{enumerate} \\
+		\textbf{Output} & Gebruiker heeft zijn lening afbetaald
+	\end{tabularx}
+
+	\newpage
+	\subsection{Overzicht van leningen opvragen}
+	\begin{tabularx}{\textwidth}{ l | X }
+		\textbf{Use case nummer} & 3 \\
+		\textbf{Naam} & Overzicht van leningen opvragen \\
+		\textbf{Scenario} &
+		\begin{enumerate}
+			\item Beheerder logt in op systeem
+			\item Beheerder kiest leningoverzicht
+			\item Systeem geeft overzicht van alle lopende leningen weer
+		\end{enumerate} \\
+		\textbf{Output} & Gebruiker heeft zijn lening afbetaald
+	\end{tabularx}
+
+	\newpage
+	\subsection{Systeem opschonen}
+	\begin{tabularx}{\textwidth}{ l | X }
+		\textbf{Use case nummer} & 4 \\
+		\textbf{Naam} & Systeem opschonen \\
+		\textbf{Scenario} &
+		\begin{enumerate}
+			\item Nieuwe maand begint
+			\item Systeem verwijdert alle afbetaalde leningen uit de database
+			\item Systeem verwijdert alle overbodige personen uit de database
+			\item Systeem stuurt bericht aan beheerder
+		\end{enumerate} \\
+		\textbf{Output} & Overbodige personen en afbetaalde leningen zijn verwijderd
+	\end{tabularx}
+
+	\newpage
+	\section{Business rules}
+	\begin{tabularx}{\textwidth}{ | c | X | c | c | }
+		\hline
+		\textbf{\#} & \textbf{Business rule} & \textbf{BUC \#} & \textbf{Scenario \#} \\ \hline
+		1 & Een renteloze lening mag maximaal \euro 500 zijn. & 1 & 5 \\ \hline
+		2 & Geldbedragen mogen niet meer dan een precisie van 2 hebben. & 1 & 5 \\ \hline
+		3 & Geldbedragen mogen niet negatief zijn. & 1 & 5 \\ \hline
+		4 & Het veld `Geleend van' en `Geleend aan' mogen niet hetzelfde zijn. & 1 & 2 \\ \hline
+		5 & De terugbetaal datum mag niet eerder zijn dan de leendatum. & 1 & 6 \\ \hline
+		6 & Het veld `Terugbetaald' mag alleen `N' of `J' bevatten. & 1 & 6 \\ \hline
+		7 & De rente mag niet negatief zijn. & 1 & 6 \\ \hline
+		8 & Je mag geen nieuwe lening aanmaken als je een schuld hebt bij 1 persoon die meer dan \euro 100 is. & 1 & 6 \\ \hline
+		9 & Je mag geen nieuwe lening aanmaken als je een lening hebt openstaan voor meer dan 6 maanden. & 1 & 6 \\ \hline
+		10 & Je mag geen nieuwe lening aanmaken als je het totaalbedrag van je huidige schuld meer dan \euro 200 is. & 1 & 6 \\ \hline
+	\end{tabularx}
+\end{document}
+

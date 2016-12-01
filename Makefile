@@ -9,7 +9,7 @@
 DESTDIR?=$(CURDIR)/pdf_output
 PDFLATEX_ARGS=-output-directory "$(DESTDIR)"
 
-all: refresh abv datab3 ewrite idpri soprj5 clean
+all: refresh abv datab3 ewrite gespr idpri soprj5 clean
 
 clean:
 	rm -f $(DESTDIR)/*.aux
@@ -26,6 +26,7 @@ refresh:
 abv: abv-week3
 datab3: datab3-week1 datab3-week2
 ewrite: ewrite-email ewrite-email-new ewrite-summary ewrite-summary-new ewrite-tutorial ewrite-tutorial-new ewrite-portfolio
+gespr: gespr-week1
 idpri: idpri-week1 idpri-week2 idpri-week3 idpri-week4
 soprj5: soprj5-vragen
 
@@ -84,6 +85,10 @@ ewrite-tutorial-new: prepare
 	cd ewrite; pandoc --template=ewrite-tutorial.textpl -s ewrite-tutorial-new.md \
 		-o ewrite-tutorial-new.pdf
 	mv ewrite/ewrite-tutorial-new.pdf pdf_output
+
+gespr-week1: prepare
+	cd gespr; pdflatex $(PDFLATEX_ARGS) gespr-week1.tex \
+		&& pdflatex $(PDFLATEX_ARGS) gespr-week1.tex
 
 idpri-week1: prepare
 	cd idpri; pdflatex $(PDFLATEX_ARGS) idpri-week1.tex \

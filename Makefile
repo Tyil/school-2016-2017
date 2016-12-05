@@ -40,6 +40,7 @@ datab3-week1: prepare
 
 datab3-week2: prepare
 	cd datab3; pdflatex $(PDFLATEX_ARGS) datab3-week2.tex \
+		&& pdflatex $(PDFLATEX_ARGS) datab3-week2.tex
 
 datab3-week4: prepare
 	cd datab3; pdflatex $(PDFLATEX_ARGS) datab3-week4.tex \

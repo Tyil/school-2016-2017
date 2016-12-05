@@ -24,7 +24,7 @@ refresh:
 	rm -fr "$(DESTDIR)"
 
 abv: abv-week3
-datab3: datab3-week1 datab3-week2
+datab3: datab3-week1 datab3-week2 datab3-week4
 ewrite: ewrite-email ewrite-email-new ewrite-summary ewrite-summary-new ewrite-tutorial ewrite-tutorial-new ewrite-portfolio
 gespr: gespr-week1
 idpri: idpri-week1 idpri-week2 idpri-week3 idpri-week4
@@ -40,7 +40,10 @@ datab3-week1: prepare
 
 datab3-week2: prepare
 	cd datab3; pdflatex $(PDFLATEX_ARGS) datab3-week2.tex \
-		&& pdflatex $(PDFLATEX_ARGS) datab3-week2.tex
+
+datab3-week4: prepare
+	cd datab3; pdflatex $(PDFLATEX_ARGS) datab3-week4.tex \
+		&& pdflatex $(PDFLATEX_ARGS) datab3-week4.tex
 
 ewrite-email: prepare
 	cd ewrite; pdflatex $(PDFLATEX_ARGS) ewrite-email.tex \

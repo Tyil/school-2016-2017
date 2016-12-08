@@ -1,0 +1,97 @@
+\documentclass[11pt,english]{article}
+
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[top=3.3cm, bottom=3.3cm, left=2.6cm, right=2.6cm]{geometry}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\setlength{\parindent}{0pt}        % indentation on new paragraph
+\setlength{\parskip}{0pt}          % vertical spacing on new paragraph
+\setlength{\lineskip}{1pt}         % vertical spacing between lines
+\setlength{\columnsep}{1cm}        % spacing between columns
+\setlength{\belowcaptionskip}{0pt} % spacing below captions
+\setlength{\abovecaptionskip}{5pt} % spacong above captions
+
+\graphicspath{{assets/}}
+
+\lfoot{}
+\cfoot{\today}
+\rfoot{\thepage/\pageref{LastPage}}
+
+\newcommand*{\Frontpage}{\begingroup
+	\hbox{%
+		\hspace*{0.2\textwidth}
+		\rule{1pt}{\textheight}
+		\hspace*{0.05\textwidth}
+		\parbox[b]{0.75\textwidth}{%
+			{\noindent\Huge\bfseries ABV}\\[2\baselineskip] % Title
+			{\large \textit{Huiswerkopdrachten, week 5}}\\[4\baselineskip] % Tagline or further description
+			{\Large \textsc{\\
+				Patrick Spek, 2099745 \\
+			}}
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+	}
+\endgroup}
+
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+	\thispagestyle{empty}
+	\Frontpage
+
+	\newpage
+	\tableofcontents
+
+	\newpage
+	\section{De Bono kleuren van de groep}
+	\begin{itemize}
+		\item \textbf{Jonathan} Blauw
+		\item \textbf{Kevin} Geel
+		\item \textbf{Kris} Geel
+		\item \textbf{Merel} Geel
+		\item \textbf{Mohammed} Groen
+	\end{itemize}
+
+	\subsection{Voorbeelden}
+	\subsubsection{Jonathan}
+	Van Jonathan is het duidelijk dat hij het proces belangrijk vind zodat er
+	een product wordt opgeleverd waar een voldoende voor te krijgen is. In een
+	gesprek met Ger heeft hij letterlijk gezegd dat dat zijn enige interesse is
+	tijdens het project.
+
+	\subsubsection{Mohammed}
+	Mohammed is redelijk vrij in in zijn manier van doen en denken. Dit leidt
+	soms tot conflicten, zoals vaker te laat zijn dan de rest. Hij wil
+	daarentegen ook ieders mening horen zodat hij een goede positie kan innemen
+	bij een argument. Hiervoor is het een vereiste om open te zijn en open te
+	staan voor andere ideeen.
+
+	\subsubsection{Kevin}
+	Bij Kevin merk je duidelijk dat hij altijd de positieve onderdelen van
+	alles probeert in te zien. Elk probleem kent een oplossing en hij probeert
+	zo snel mogelijk problemen te verhelpen zodat de groep weer op positieve
+	voet verder kan gaan.
+
+	\newpage
+	\section{De Bono kleur van mijzelf}
+	De De Bono kleur die ik mijzelf toeken is \textbf{wit}. Ik weet van mijzelf
+	dat ik objectieve informatie wil hebben om beslissingen te maken,
+	emotionele waarde is zinloos in programmacode. Ik zou mezelf ook groen
+	kunnen toekennen gezien ik altijd open sta voor alternatieven, mits deze
+	goed worden onderbeuwd. Gezien ik deze onderbouwing weer volledig objectief
+	wil hebben (dus wit), ben ik van mening dat wit beter bij mij past dan
+	groen.
+
+	\subsection{Voorbeeld}
+	Een goed voorbeeld is de vorige ABV meeting, waarbij ik door middel van
+	objectieve informatie tot de conclusie kwam dat een van onze groepsleden
+	een idioot was. Hoewel dit objectief gezien een correcte conclusie is,
+	mocht dit helaas niet gemeld worden. Het leidt dus helaas wel tot
+	conflicten.
+\end{document}
+

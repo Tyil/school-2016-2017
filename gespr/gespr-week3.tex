@@ -1,0 +1,78 @@
+\documentclass[11pt,english]{article}
+
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+
+\graphicspath{{assets/}}
+
+\lfoot{Patrick Spek}
+\cfoot{\today}
+\rfoot{\thepage/\pageref{LastPage}}
+
+\newcommand*{\Frontpage}{\begingroup
+	\hbox{%
+		\hspace*{0.2\textwidth}
+		\rule{1pt}{\textheight}
+		\hspace*{0.05\textwidth}
+		\parbox[b]{0.75\textwidth}{%
+			{\noindent\Huge\bfseries Gesprekken}\\[2\baselineskip] % Title
+			{\large \textit{Week 3}}\\[4\baselineskip] % Tagline or further description
+			{\Large \textsc{\\
+				Patrick Spek \\
+			}}
+
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+	}
+\endgroup}
+
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+	% frontpage
+	\thispagestyle{empty}
+	\Frontpage{}
+
+	% table of contents
+	\newpage
+	\tableofcontents
+
+	% main
+	\newpage
+	\section{Conflictgesprek 1}
+	\subsection{Doel}
+	Raoul rustig krijgen, het volledige verhaal uitleggen en zorgen dat Ruud en
+	Raoul weer goed met elkaar overweg kunnen.
+
+	\subsection{Strategie}
+	Raoul aanspreken, aangeven dat ze heeft gehoord dat hij boos is op Ruud,
+	Raoul zijn verhaal laten doen, daarna Ruud's kant van het verhaal aan Raoul
+	vertellen.
+
+	\subsection{Onderdelen}
+	Zelfde als strategie.
+
+	\newpage
+	\section{Conflictgesprek 2}
+	\subsection{Rol en taken}
+	Als medewerker heb je te maken met je chef. Zijn taak is om de afdeling
+	goed te laten lopen. Je hebt ook te maken met je medewerkers. Zij hebben
+	ieder hun eigen rol, en zonder jou hebben zij meer werk te doen.
+
+	\subsection{Belang van de chef}
+	De chef heeft als belang om de afdeling goed te laten lopen.
+
+	\subsection{Doel}
+	Vrij krijgen op de dag van de bruiloft.
+
+	\subsection{Strategie}
+	Het gesprek voorzichtig aansnijden zodat het geen gevoelige snaar raakt bij
+	de chef. Daarna kijken of er valt te onderhandelen: avonden later
+	doorwerken om op de betreffende dag zelf vrij te krijgen.
+\end{document}
+

@@ -26,7 +26,7 @@ refresh:
 abv: abv-week3
 datab3: datab3-week1 datab3-week2 datab3-week4
 ewrite: ewrite-email ewrite-email-new ewrite-summary ewrite-summary-new ewrite-tutorial ewrite-tutorial-new ewrite-portfolio
-gespr: gespr-week1
+gespr: gespr-week1 gespr-week3
 idpri: idpri-week1 idpri-week2 idpri-week3 idpri-week4
 soprj5: soprj5-vragen
 
@@ -93,6 +93,10 @@ ewrite-tutorial-new: prepare
 gespr-week1: prepare
 	cd gespr; pdflatex $(PDFLATEX_ARGS) gespr-week1.tex \
 		&& pdflatex $(PDFLATEX_ARGS) gespr-week1.tex
+
+gespr-week3: prepare
+	cd gespr; pdflatex $(PDFLATEX_ARGS) gespr-week3.tex \
+		&& pdflatex $(PDFLATEX_ARGS) gespr-week3.tex
 
 idpri-week1: prepare
 	cd idpri; pdflatex $(PDFLATEX_ARGS) idpri-week1.tex \

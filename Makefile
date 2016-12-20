@@ -23,7 +23,7 @@ prepare:
 refresh:
 	rm -fr "$(DESTDIR)"
 
-abv: abv-week3 abv-week5
+abv: abv-week3 abv-week5 abv-week7
 datab3: datab3-week1 datab3-week2 datab3-week4 datab3-week6
 ewrite: ewrite-email ewrite-email-new ewrite-summary ewrite-summary-new ewrite-tutorial ewrite-tutorial-new ewrite-portfolio
 gespr: gespr-week1 gespr-week3
@@ -37,6 +37,10 @@ abv-week3: prepare
 abv-week5: prepare
 	cd abv; pdflatex $(PDFLATEX_ARGS) abv-week5.tex \
 		&& pdflatex $(PDFLATEX_ARGS) abv-week5.tex
+
+abv-week7: prepare
+	cd abv; pdflatex $(PDFLATEX_ARGS) abv-week7.tex \
+		&& pdflatex $(PDFLATEX_ARGS) abv-week7.tex
 
 datab3-week1: prepare
 	cd datab3; pdflatex $(PDFLATEX_ARGS) datab3-week1.tex \

@@ -1,0 +1,87 @@
+\documentclass[11pt,english]{article}
+
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[top=3.3cm, bottom=3.3cm, left=2.6cm, right=2.6cm]{geometry}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\setlength{\parindent}{0pt}        % indentation on new paragraph
+\setlength{\parskip}{0pt}          % vertical spacing on new paragraph
+\setlength{\lineskip}{1pt}         % vertical spacing between lines
+\setlength{\columnsep}{1cm}        % spacing between columns
+\setlength{\belowcaptionskip}{0pt} % spacing below captions
+\setlength{\abovecaptionskip}{5pt} % spacong above captions
+
+\graphicspath{{assets/}}
+
+\lfoot{}
+\cfoot{\today}
+\rfoot{\thepage/\pageref{LastPage}}
+
+\newcommand*{\Frontpage}{\begingroup
+	\hbox{%
+		\hspace*{0.2\textwidth}
+		\rule{1pt}{\textheight}
+		\hspace*{0.05\textwidth}
+		\parbox[b]{0.75\textwidth}{%
+			{\noindent\Huge\bfseries ABV}\\[2\baselineskip] % Title
+			{\large \textit{Huiswerkopdrachten, week 7}}\\[4\baselineskip] % Tagline or further description
+			{\Large \textsc{\\
+				Patrick Spek, 2099745 \\
+			}}
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+	}
+\endgroup}
+
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+	\thispagestyle{empty}
+	\Frontpage
+
+	\newpage
+	\tableofcontents
+
+	\newpage
+	\section{Huidige Tuckman fase}
+	De huidige fase waarin de groep zich bevind is naar mijn mening nog wat
+	lastig om te zeggen. Er zijn nog wel wat conflicten, wat zou duiden op de
+	\textbf{storming} fase. Aan de andere kant zijn er ook momenten waarop
+	\textbf{norming} en soms zelfs \textbf{performing} als fase zou kunnen
+	worden gezien.
+
+	Voor storming was er het voorval waarbij een aantal gele kaarten werden
+	uitgedeeld wat resulteerde in een conflict, maar daarna was er met een
+	aantal leden norming te zien; er werden wat afspraken verduidelijkt en men
+	werkte door aan zijn of haar opdrachten. Bij samenkomsten hierna was er tussen
+	groepsleden ook duidelijk performing te zien
+
+	\section{De kracht van de groep}
+	De kracht van onze groep zit hem in de kennis die een aantal groepsleden
+	samen hebben. Hierdoor kunnen we grote inhaalslagen maken voor het project,
+	wat voor ons vrij belangrijk is momenteel. Een voorbeeld hiervan is
+	bijvoorbeeld Kevin die zonder al te veel moeite de algehele database kan
+	updaten om conform onze standaarden te zijn, en dat er minder administratie
+	vanuit de applicatie nodig is (dus minder werk voor de rest van de groep).
+
+	\section{De valkuil van de groep}
+	Echter hebben we ook valkuilen. De meest duidelijke is waarschijnlijk de
+	conflictsituaties die moeilijk worden opgelost, zelfs wanneer er een docent
+	bij is. Dit zorgt voor onrust in de groep en kost ons tijd die we aan het
+	ontwikkelen hadden kunnen besteden. Als voorbeeld hiervoor is de uitreiking
+	van de laatste reeks gele kaarten in de groep.
+
+	\section{De belangrijkste afspraak}
+	De belangrijkste afspraak die wij nu naleven is het op tijd zijn. Dit is
+	onder andere op tijd zijn voor samenkomsten, maar ook het opleveren van de
+	opdrachten die gemaakt moesten worden. In samenwerking met Ger wordt hier
+	ook streng op gelet, zodat iedereen zijn of haar werk correct en op tijd
+	uitvoert. Een andere belangrijke afspraak die we recent hebben vastgelegd is
+	het tonen van eigen initiatief.
+\end{document}
+
